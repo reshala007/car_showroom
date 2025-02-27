@@ -1,12 +1,9 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import db from '../index.js'
-import collections from '../src/collections.js'
 import { validationResult } from 'express-validator'
 import config from '../config.js'
 import User from '../models/User.js'
-// import Manager from '../models/Manager.js'
-// import Admin from '../models/Admin.js'
 
 function generateAccessToken(id, roles) {
     const pyaload = {

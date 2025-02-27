@@ -1,6 +1,7 @@
 import express from 'express';
 import { MongoClient } from 'mongodb';
 import authRouter from './routers/authRouter.js';
+import getRouter from './routers/getRouter.js';
 
 const dbURL = 'mongodb://localhost:27017';
 const app = express();
@@ -10,7 +11,7 @@ const db = client.db('car_showroom')
 
 app.use(express.json());
 app.use('/api/auth', authRouter)
-// app.use('/api/`')
+app.use('/api', getRouter)
 const start = async () => {
     try {
         await client.connect()
