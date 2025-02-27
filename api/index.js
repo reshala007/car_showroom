@@ -9,7 +9,8 @@ const client = new MongoClient(dbURL);
 const db = client.db('car_showroom')
 
 app.use(express.json());
-app.use('/auth', authRouter)
+app.use('/api/auth', authRouter)
+// app.use('/api/`')
 const start = async () => {
     try {
         await client.connect()

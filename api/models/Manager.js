@@ -1,13 +1,13 @@
 import { Schema, model } from "mongoose";
 
-const User = new Schema({
+const Manager = new Schema({
     name: {type: String, required: true},
-    passport_data: {type: String},
-    driver_licens: {type: String},
-    purchase_history: [{type: String, ref: 'Sale_act'}],
+    sales_history: [{type: String, ref: 'Sale_act'}],
+    test_drives : [{type: String, ref: 'Test_drive'}],
     username: {type: String, unique: true, required: true},
     password: {type: String, required: true},
     roles: [{type: String, required: true}],
+    icon: {type: String, default: ''}
 })
 
-export default model('User', User)
+export default model('Manager', Manager)
